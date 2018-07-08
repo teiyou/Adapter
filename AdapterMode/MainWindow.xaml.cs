@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using AdapterMode.Component;
+using System.Reflection;
 namespace AdapterMode
 {
     /// <summary>
@@ -23,6 +24,28 @@ namespace AdapterMode
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Type current = typeof(Target);
+
+            MethodInfo method = current.GetMethod(this.txt.Text);
+            if(method!=null)
+            {
+                this.txt.Text =(string ) method.Invoke(new Adapter(),new object[] { });
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Type current = typeof(Target);
+
+            MethodInfo method = current.GetMethod(this.txt.Text);
+            if (method != null)
+            {
+                this.txt.Text = (string)method.Invoke(new Adapter1(), new object[] { });
+            }
         }
     }
 }

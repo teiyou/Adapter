@@ -8,8 +8,10 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" Margin="64.152,156.663,72.155,62.337">
-            <TextBox TextWrapping="Wrap" Text="TextBox"/>
+            <TextBox  Name="txt" TextWrapping="Wrap" Text="TextBox"/>
         </Border>
+        <Button Content="适配" Margin="108.046,0,0,20.654" VerticalAlignment="Bottom" RenderTransformOrigin="-0.031,0.72" Click="Button_Click" HorizontalAlignment="Left" Width="75"/>
+        <Button Content="适配" Margin="0,0,159.531,20.654" VerticalAlignment="Bottom" RenderTransformOrigin="-0.031,0.72" Click="Button_Click_1" HorizontalAlignment="Right" Width="75"/>
 
     </Grid>
 </Window>
